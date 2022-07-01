@@ -15,7 +15,6 @@ Only assign a user the minimun amount of privileges they need to do their job
 Assing permissions using iam policy documents consiting of JSON 
 Policy documents ands how it works.
 Permissions: 
-```json
 {
 	"Version": "2012-10-17"
 	"Statement": [
@@ -26,7 +25,6 @@ Permissions:
 		}
 	]
 }
-```
 
 Policy documents:
 - Groups
