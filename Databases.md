@@ -25,9 +25,9 @@ Each read replica has its own DNS endpoint
 Read replicas can be promoted to be their own databases
 This breaks the replication
 
-1. Scaling Read Performance
-2. Requires Automatic Backup
-3. Multiple Read Replicas Are Supported
+1. Scaling Read Performance: Primarily used for scaling, not for diasater recovery
+2. Requires Automatic Backup: Automatic backups must be enabled in order to deploy a read replica
+3. Multiple Read Replicas Are Supported: MySQL, MariaDB, PostgreSQL, Oracle, and SQL server allow you to add up to 5 read replicas to each DB instance
 
 > Note: Amazon RDS read replicas complement Multi-AZ deployments. The main purpose of read replicas is scalability, whereas the main purpose for Multi-AZ deployments is availability. However, you may use a read replica for disaster recovery of the source DB instance either in the same AWS Region or in the another Region. Check the resources section of this lecture for more details
 
