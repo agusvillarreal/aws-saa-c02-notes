@@ -48,3 +48,41 @@ Aurora Serverless provides a relatively simple, cost-effective option for infreq
 - 3 types of replicas available: Aurora replicas, MySQL replicas, and PostgreSQL replicas. Automated failover is only available with Aurora replicas
 - Aurora has automated backups turned on by default. You can share these snapshots with other AWS accounts
 - Use Aurora Serverless if you want a simple, cost-effective option for infrequent, intermittent, or unpredictable workloads
+
+## Dynamo DB
+NoSQL fast and flexible
+- Stored on SSD storage
+- Spread across 3 geographically distinct data centers
+- Eventually consistent reads
+Strongly consistent reads
+
+| Eventually                                                                                                                                                           | Strongly                                                                                                                     |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Consistency across all **copies of data is usually reached within a second**. Repeating a read afeter a short time should return the updated data. Best read performance | A strongly consistent read **returns a results that reflects all writes** that received a successfull response prior to the read |
+
+## When Do we use Dynamo DB Transactions?
+- If you see any scenario question that mentions ACID requirements, think Dynamo DB transactions
+- DynamoDB transactions provide developers atomicty, consistency, isolation and durability (ACID) across 1 or more tables within a single AWS account and region
+- All or nothing transactions 
+
+## Saving yout data with DynamoDB Backups
+#### On-Demand Backup and Restore
+- Full backups at any time
+- Zero impact on table performance or availability
+- Consistent within seconds and retained until deleted
+- Operates within same region as the source table
+
+#### Point-in-Time Recovery (PITR)
+- Protects against accidental writes or deletes
+- Restore to any points in the last 35 days
+- Incremental backups
+- Not enabled by default
+- Latestt restorable: 5 minutes in the past
+
+## Taking Your data global with DynamoDB Streams and Global Tables
+Managed Multi-master, multi-region replicacion
+- Globally distirbuted applications
+- Based on DybnamoDB streams
+- Multi-region redundancy for disaster recovery or high availability
+- No application rewrites
+- Replication latency under 1 second
