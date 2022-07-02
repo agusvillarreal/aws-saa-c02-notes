@@ -41,7 +41,7 @@ This breaks the replication
 MySQL and PostgreSQL - compaible relational database engine that combines the speed and availability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases
 
 #### Aurora Serverless Use Cases
-Aurora Serverless provides a relatively simple, cost-effective option for infrequent, intermitten, or unpredictable workloads
+Aurora Serverless provides a relatively simple, cost-effective option for infrequent, intermitten, or unpredictable workloads. An Aurora Serverless DB cluster automatically starts up, shuts down, and scales capacity up and down based on your application's needs
 
 - 2 copies of your data are contaiined in each Availability zone, with a minimum if 3 Availability Zones. 6 copies of your data
 - You can share Aurora snapshots with other AWS accounts
