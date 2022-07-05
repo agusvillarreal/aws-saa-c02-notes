@@ -28,6 +28,8 @@ You can use a network address translation (NAT) gateway to enable instances in a
 - No need to patch
 - Not asscociated with security groups
 - Automatically assigned a public IP address
+
+
 High Availability with NAT Gateway
 If you have resources in multiple Availability zones and they share a NAT gateway, in the event the NAT gateway's Availability Zone is down, resources in the other Availability Zones lose internet access
 
