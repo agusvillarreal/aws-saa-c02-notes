@@ -39,3 +39,8 @@ A network access control list (ACL) is an optional layer of security for your VP
 - **Custom Network ACLs**: You can create custom netkork ACLs. By default, each custom newtwork ACL denies all inbound and outbound traffic until you add rules
 - **Subnet associations**: Each subnet in your VPC must be associated with a network ACL. If you don't explicity associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL
 - **Block IP Addresses:** Block IP address using network ACLs, not security groups
+
+- You can associate a network ACL with multiple subnets; however, a subnet can be associated with **only 1 network ACL** at a time. When you associate a network ACL with a subnet, the previous association is removed
+- Network ACLs contain a **numbered list of rules** that are evaluated in order, starting with the **lowest** numbered rule
+- Network ACLs have **separate** inbound and outbound rules, and each rule can either **allow or deny traffic**
+- Network ACLs are **stateless**; responses to allowed inbound traffic are subject to the rules for outbound traffic (and vice versa)
