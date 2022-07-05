@@ -60,10 +60,12 @@ They are horizontally scaled, redudant, and highly available VPC components that
 
 ## Building Solutions across VPCs with Peering
 VPC Peering -> Allows you to connect 1 VPC with another via a direct network route using private IP addresses
-
-Transitive peering is not supported. This must always be in a hub-and-spoke model
-You can peer between regions
-No overlapping CIDR address ranges
+- Instances behave as if they were on the same private network
+- You can peer VPCs with other AWS accounts as well as with other VPCs in the same account
+- Transitive peering is not supported. 
+- This must always be in a hub-and-spoke model
+- You can peer between regions
+- No overlapping CIDR address ranges
 
 ## Network Privacy with AWS PrivateLink
 If you see a question asking about peering VPCs to tens, hundreds, or thousands of customer VPCs, think of AWS PrivateLinks
