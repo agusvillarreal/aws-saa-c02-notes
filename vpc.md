@@ -44,3 +44,42 @@ A network access control list (ACL) is an optional layer of security for your VP
 - Network ACLs contain a **numbered list of rules** that are evaluated in order, starting with the **lowest** numbered rule
 - Network ACLs have **separate** inbound and outbound rules, and each rule can either **allow or deny traffic**
 - Network ACLs are **stateless**; responses to allowed inbound traffic are subject to the rules for outbound traffic (and vice versa)
+
+## Private Communication Using VPC endpoints
+VPC Endpoints -> provately connect to your VPC to supported AWS services
+**Endpoints Are virtual devices**
+They are horizontally scaled, redudant, and highly available VPC components that allow communication between instances in your VPC and services _without imposing availability risks or bandwidth constraints on your network traffic_
+
+- Use case: When you want to connect AWS services without leaving the Amazzon internal network
+- 2 types of VPC Endpoints: Interface endpoints and gateway endpoints
+- Gateway Endpoints: Support S3 and DynamoDB
+
+## Building Solutions across VPCs with Peering
+VPC Peering -> Allows you to connect 1 VPC with another via a direct network route using private IP addresses
+
+Transitive peering is not supported. This must always be in a hub-and-spoke model
+You can peer between regions
+No overlapping CIDR address ranges
+
+## Network Privacy with AWS PrivateLink
+If you see a question asking about peering VPCs to tens, hundreds, or thousands of customer VPCs, think of AWS PrivateLinks
+Doesn't require VPC peering, no route tables, NAT gateways, internet gateways, etc.
+RequIres a Network Load Balancer on the service VPC and an ENI on the customer VPC
+
+## Securing Your Network with VPN CloudHub
+If you have multiple sites, each with its own VPN connection, you can use AWS VPN CloudHub to connect those sites together. It's similar to VPC peering in that it works on a hub-and-spoke model
+AWS VPN CloudHub is low cost and easy to manage. Though it operates over the public internet, all traffic between the customer gateway and the AWS VPN CloudHub is encrypted
+
+## Connecting On-Premises with Direct Connect 
+AWS Direct Connect is a cloud service solution that makes it easy to establish a dedicated network connection from your premises to AWS
+- Direct Connect directly connects your data center to AWS
+- Useful for high-throughput workloads (e.g., lots of network traffic)
+- Helpful when you need a stable and reliable secure connection
+- VPN dropping out, reduce newtwork cost, throughput
+
+## Simplifying Networks with Transit Gateway
+- You can use route tables to limit how VPCs talk to one another
+- Works with Direct Connect as well as VPN connections
+- Supports IP multicast
+- Simplifying network Topology
+
