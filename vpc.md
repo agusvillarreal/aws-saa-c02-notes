@@ -28,6 +28,8 @@ You can use a network address translation (NAT) gateway to enable instances in a
 - No need to patch
 - Not asscociated with security groups
 - Automatically assigned a public IP address
+High Availability with NAT Gateway
+If you have resources in multiple Availability zones and they share a NAT gateway, in the event the NAT gateway's Availability Zone is down, resources in the other Availability Zones lose internet access
 
 ## Protecting Your Resources with Security Groups
 Security groups are stateful - if you send a request from youfr instance, the response traffic for that request is allowed to flow in regardless of inbound security group rules 
