@@ -52,3 +52,42 @@ alias record vs cname -> alias record (AWS)
 2. CNAME Records
 3. NS Records
 4. A records
+
+## Simple Routing Policy
+If you choose the simple routing policy, can only have **one record with multiple IP addresses**. If you specify **multiple value in a record**, Route 53 returns **all values** to the user in a **random order**
+
+## Using a Weighted Routing Policy
+The amount (percentage) traffic to specific Regions usign route 53
+
+### Health checks
+- You can health checks on individual record sets
+- If a record set fails a health check, it will be removed from Route 53 until it **passes** the health check
+- You can set SNS notification to alert you about failed health checks
+
+## Failover Routing Policy
+Failover routing policies are used when you want to create an **active/passive** set up
+_Health check monitors the health of your end points_
+
+In this example Route53 will send the traffic to AP-SOUTHEAST-2 because it has detected a failure in EU-WEST-2
+
+## Geolocation Routing Policy
+Lets you choose where your traffic will be sent based on based on the geographic location of your users 
+Users in  different part of the world, and where do you want to send them
+Location of your users, regulatory
+
+## Geoproximity Routing Policy
+You can use Route 53 traffic flow to build a routing system that uses a combination of:
+- Geographic location
+- Latency
+- and availability to route traffic
+from your users to your cloud or on-premises endpoint
+Lets Amazon Route 53 route traffic to your resources based on the geographic location of your users and your resources
+You can also optionally choose to route more traffic or less to a given resource by specifying a value, known as a bias. A bias expands or shrinks the size of the geographic region from which traffic is routed to a resource
+Traffic flow
+
+## Using a Latency Routing Policy
+Lowest latency option
+
+## Multivalue Answer Routing Policy 
+return multiple values
+any record, check health of each resource
